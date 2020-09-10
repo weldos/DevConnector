@@ -1,6 +1,75 @@
-$primary-color: red;
-$secondary-color: green;
+@import "config";
+@import "utilities";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background: red;
+  font-family: "Raleway", sans-serif;
+  font-size-adjust: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px $primary-color;
+  opacity: 0.9;
+
+  //nest in other selectors for navbar
+  //.navbar selector
+
+  ul {
+    display: flex;
+  }
+
+  a {
+    color: #fff;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+
+    // .navbar a:hover
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+//Landing section
+.landing {
+  position: relative;
+  background: url(../img/showcase.jpg) no-repeat center center/cover;
+  height: 100vh;
+
+  //this is the same as saying .landing-inner (this is a nested statement)
+  &-inner {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column; //Going Vertical
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }
