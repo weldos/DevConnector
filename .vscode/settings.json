@@ -6,5 +6,8 @@
       "savePath": "/dist/css"
     }
   ],
-  "liveSassCompile.settings.generateMap": false
+  "liveSassCompile.settings.generateMap": false,
+  "cSpell.ignoreWords": [
+    "spaceamounts"
+  ]
 }

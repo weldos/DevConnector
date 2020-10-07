@@ -1,3 +1,13 @@
+//container
+.container {
+  max-width: $max-width;
+  margin: auto; //centers our container
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem; //give us space below the navbar
+  margin-bottom: 3rem;
+}
+
 //Text styles
 .x-large {
   font-size: 4rem;
@@ -19,6 +29,10 @@
   color: $primary-color;
 }
 
+.round-img {
+  border-radius: 60%;
+}
+
 // Background
 
 .bg {
@@ -35,9 +49,6 @@
     @include set-background($success-color);
   }
   &-danger {
-    @include set-background($danger-color);
-  }
-  &-white {
     @include set-background($danger-color);
   }
   &-white {
@@ -93,6 +104,31 @@
   &:hover {
     background: lighten($dark-color, 20%);
     color: #fff;
+  }
+}
+
+// Alert Styles
+.alert {
+  padding: 0.8rem;
+  margin: 1rem;
+  opacity: 0.9;
+  background-color: $light-color;
+  color: #333;
+
+  &.alert-primary {
+    @include set-background($primary-color);
+  }
+
+  &.alert-dark {
+    @include set-background($dark-color);
+  }
+
+  &.alert-success {
+    @include set-background($success-color);
+  }
+
+  &.alert-danger {
+    @include set-background($danger-color);
   }
 }
 
