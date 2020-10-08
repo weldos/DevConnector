@@ -85,3 +85,93 @@ ul {
   line-height: 1.8;
   margin-bottom: 1rem;
 }
+
+.profile-grid {
+  display: grid;
+  // 2 column layout
+  // Specifying which sections go in which columns
+  grid-template-areas:
+    "top top"
+    "about about"
+    "exp edu"
+    "github github";
+
+  grid-gap: 1rem;
+
+  .profile-top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    img {
+      width: 250px;
+    }
+    .icons a {
+      color: #fff;
+      margin: 0 0.3rem;
+
+      &:hover {
+        color: $dark-color;
+      }
+    }
+  }
+
+  .profile-about {
+    grid-area: about;
+    text-align: center;
+    .skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .profile-exp {
+    grid-area: exp;
+  }
+
+  .profile-edu {
+    grid-area: edu;
+  }
+
+  .profile-edu,
+  .profile-exp {
+    & > div {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: #ccc 1px dotted;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .profile-github {
+    grid-area: github;
+
+    .repo {
+      display: flex;
+
+      // tell the browser how much space we want this div to take
+      & > div:first-child {
+        // This div will take up 70% of the space (width)
+        flex: 7; // make everything same length
+        flex-basis: 70%; // how much space to take up
+      }
+
+      & > div:last-child {
+        // This div will take up 30% of the space (width)
+        flex: 3;
+        flex-basis: 30%;
+      }
+    }
+  }
+}
